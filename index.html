@@ -175,6 +175,22 @@
             gap: 30px;
         }
 
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            width: 28px;
+            height: 3px;
+            background-color: var(--gold);
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
         .nav-links a {
             font-weight: 400;
             color: var(--text-light);
@@ -563,8 +579,38 @@
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
 
-            .nav-links,
+            .nav-links {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-darker);
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s ease-in-out;
+                gap: 0;
+                z-index: 1000;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .nav-links.active {
+                max-height: 400px;
+                padding-bottom: 20px;
+            }
+
+            .nav-links a {
+                padding: 15px 20px;
+                width: 100%;
+                text-align: center;
+                border-top: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
             .nav-action {
                 display: none;
             }
@@ -648,7 +694,14 @@
             <div class="logo">
                 <img src="logo_kristo_prime_bank-removebg-preview.png" alt="Kristo Prime Bank Logo" class="logo-img">
             </div>
-            <nav class="nav-links">
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <nav class="nav-links" id="nav-links">
                 <a href="index.html">Accueil</a>
                 <a href="nos_produits.html">Nos produits</a>
                 <a href="Apropos.html">À propos</a>
@@ -912,6 +965,21 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            
+            // Animation du hamburger vers X
+            const spans = hamburger.querySelectorAll('span');
+            spans[0].style.transform = navLinks.classList.contains('active') ? 'rotate(45deg) translate(6px, 6px)' : 'none';
+            spans[1].style.opacity = navLinks.classList.contains('active') ? '0' : '1';
+            spans[2].style.transform = navLinks.classList.contains('active') ? 'rotate(-45deg) translate(6px, -6px)' : 'none';
+        });
+    </script>
 </body>
 
 </html>
