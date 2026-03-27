@@ -665,8 +665,8 @@
             const object = Object.fromEntries(formData);
             const json = JSON.stringify(object);
 
-            // Utilisation d'une URL relative pour fonctionner sur n'importe quel domaine (Koyeb ou local)
-            fetch('/send-email', {
+            // Sur Vercel, toutes les fonctions API habitent dans le dossier /api/
+            fetch('/api/send-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
