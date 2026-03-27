@@ -502,79 +502,134 @@
             border-radius: 16px;
         }
 
-        /* Footer */
-        .footer {
-            background-color: var(--bg-darker);
-            padding: 80px 0 20px;
-            border-top: 1px solid var(--border-color);
+        /* Updated Footer to match image */
+        .footer-new {
+            background-color: var(--bg-dark);
+            padding: 100px 0 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .footer-top {
+        .footer-grid-new {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 50px;
             flex-wrap: wrap;
-            gap: 40px;
+            gap: 50px;
         }
 
-        .footer-brand {
-            max-width: 350px;
+        .footer-left-new {
+            max-width: 500px;
         }
 
-        .footer-brand p {
-            margin: 20px 0;
-        }
-
-        .subscribe-form {
+        .footer-brand-new {
             display: flex;
-            gap: 10px;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 40px;
         }
 
-        .subscribe-form input {
-            padding: 12px;
+        .logo-k {
+            background-color: var(--gold);
+            color: #000;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             border-radius: 6px;
+            font-weight: 800;
+            font-size: 1.8rem;
+        }
+
+        .brand-text-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-white);
+        }
+
+        .footer-left-new p {
+            font-size: 1rem;
+            margin-bottom: 25px;
+            color: var(--text-white);
+        }
+
+        .footer-newsletter-new {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer-newsletter-new input {
+            background-color: var(--bg-darker);
             border: 1px solid var(--border-color);
-            background-color: transparent;
+            padding: 15px;
+            border-radius: 8px;
             color: var(--text-white);
             flex-grow: 1;
+            min-width: 250px;
         }
 
-        .footer-links {
+        .footer-newsletter-new .btn {
+            padding: 15px 30px;
+        }
+
+        .footer-policy-text {
+            font-size: 0.85rem;
+            opacity: 0.6;
+            max-width: 400px;
+            line-height: 1.4;
+        }
+
+        .footer-right-new {
             display: flex;
-            gap: 60px;
+            gap: 80px;
         }
 
-        .link-group h4 {
+        .footer-col-new h4 {
             color: var(--text-white);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             font-size: 1.1rem;
+            font-weight: 700;
         }
 
-        .link-group ul {
+        .footer-col-new ul {
             list-style: none;
         }
 
-        .link-group ul li {
-            margin-bottom: 10px;
+        .footer-col-new ul li {
+            margin-bottom: 12px;
         }
 
-        .link-group ul li a {
-            color: var(--text-light);
-            opacity: 0.8;
+        .footer-col-new ul li a {
+            opacity: 0.7;
+            font-size: 0.95rem;
         }
 
-        .link-group ul li a:hover {
-            color: var(--gold);
+        .footer-col-new ul li a:hover {
             opacity: 1;
+            color: var(--gold);
         }
 
-        .footer-bottom {
-            text-align: left;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-            opacity: 0.6;
+        .social-icons-new {
             display: flex;
-            justify-content: space-between;
+            gap: 15px;
+        }
+
+        .social-icon-circle {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-white);
+            font-size: 1.2rem;
+        }
+
+        .social-icon-circle:hover {
+            background-color: var(--gold);
+            color: var(--bg-dark);
+            border-color: var(--gold);
         }
 
         /* Responsive adjustments */
@@ -659,13 +714,21 @@
                 width: 100%;
             }
 
-            .footer-top {
+            .footer-grid-new {
                 flex-direction: column;
             }
 
-            .footer-links {
+            .footer-right-new {
                 flex-direction: column;
                 gap: 30px;
+            }
+
+            .footer-newsletter-new {
+                flex-direction: column;
+            }
+
+            .footer-newsletter-new input {
+                min-width: 100%;
             }
         }
     </style>
@@ -926,42 +989,44 @@
 
     </main>
 
-    <footer class="footer">
+    <footer class="footer-new">
         <div class="container">
-            <div class="footer-top">
-                <div class="footer-brand">
-                    <div class="logo">
-                        <span class="logo-icon-gold">K</span>
+            <div class="footer-grid-new">
+                <div class="footer-left-new">
+                    <div class="footer-brand-new">
+                        <div class="logo-k">K</div>
+                        <div class="brand-text-name">KRISTO PRIME BANK</div>
                     </div>
-                    <p>Kristo Prime Bank, la nouvelle façon de voir la banque.</p>
-                    <form class="subscribe-form mt-4">
-                        <input type="email" placeholder="Entrez votre adresse email">
+                    <p>Restez informé des nouveautés et mises à jour de Kristo Prime Bank.</p>
+                    <form class="footer-newsletter-new">
+                        <input type="email" placeholder="Email">
                         <button type="submit" class="btn btn-primary">S'abonner</button>
                     </form>
+                    <p class="footer-policy-text">
+                        En vous abonnant, vous acceptez notre politique de confidentialité et consentez à recevoir nos
+                        communications.
+                    </p>
                 </div>
-                <div class="footer-links">
-                    <div class="link-group">
-                        <h4>SOCIÉTÉ</h4>
+
+                <div class="footer-right-new">
+                    <div class="footer-col-new">
+                        <h4>Produits</h4>
                         <ul>
-                            <li><a href="#">À propos de nous</a></li>
-                            <li><a href="#">Conditions d'utilisation</a></li>
-                            <li><a href="#">Politique de confidentialité</a></li>
-                            <li><a href="#">Tarification & honoraires</a></li>
+                            <li><a href="#">Comptes bancaires</a></li>
+                            <li><a href="#">Services de crédit</a></li>
+                            <li><a href="#">Cartes et change</a></li>
+                            <li><a href="#">Transferts instantanés</a></li>
                         </ul>
                     </div>
-                    <div class="link-group">
-                        <h4>PRODUITS</h4>
-                        <ul>
-                            <li><a href="#">Comptes courants</a></li>
-                            <li><a href="#">Transferts d'argent</a></li>
-                            <li><a href="#">Cartes de crédit</a></li>
-                            <li><a href="#">Micro-crédits</a></li>
-                        </ul>
+
+                    <div class="footer-col-new">
+                        <h4>Nous suivre</h4>
+                        <div class="social-icons-new">
+                            <a href="#" class="social-icon-circle">f</a>
+                            <a href="#" class="social-icon-circle">in</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Kristo Prime Bank. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
