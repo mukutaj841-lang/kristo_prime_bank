@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Kristo Prime Bank</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a1128;
+            --bg-darker: #050a17;
+            --gold: #d4af37;
+            --gold-hover: #b5952f;
+            --text-light: #e0e0e0;
+            --text-white: #ffffff;
+            --bg-card: #e8dcc4;
+            --bg-card-dark: #121e3b;
+            --font-main: 'Montserrat', sans-serif;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --bg-white: #ffffff;
+            --text-dark: #0a1128;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-4 {
+            margin-top: 2rem;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            color: var(--text-white);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--gold);
+            color: var(--bg-darker);
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--gold-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            font-weight: 600;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--gold);
+            color: var(--bg-darker);
+        }
+
+        /* Navbar */
+        .navbar {
+            padding: 20px 0;
+            background-color: var(--bg-darker);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-icon {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .logo-icon-gold {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-white);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 400;
+            color: var(--text-light);
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* ===== Contact Page Specific Styles ===== */
+        .contact-page-body {
+            background-color: #0a1128;
+        }
+
+        .contact-hero {
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+
+        .contact-hero h1 {
+            font-size: 2.8rem;
+            color: var(--text-white);
+            margin-bottom: 20px;
+        }
+
+        .contact-hero p {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .section-form {
+            padding-bottom: 80px;
+        }
+
+        .form-title-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .form-title-section h2 {
+            font-size: 2.2rem;
+            color: #fff;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .form-title-section p {
+            font-size: 1rem;
+            color: var(--text-light);
+            opacity: 0.8;
+        }
+
+        .form-container {
+            max-width: 850px;
+            margin: 0 auto;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 60px;
+            border-radius: 8px;
+        }
+
+        .contact-form .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px 40px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 12px;
+        }
+
+        .contact-form label {
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            background-color: #0a1128;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 12px 15px;
+            border-radius: 4px;
+            color: var(--text-white);
+            font-family: var(--font-main);
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .form-group textarea {
+            height: 250px;
+            resize: none;
+        }
+
+        /* Status Messages styles */
+        #form-status {
+            display: none;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        #form-status.success {
+            display: block;
+            background-color: rgba(46, 204, 113, 0.2);
+            color: #2ecc71;
+            border: 1px solid #2ecc71;
+        }
+
+        #form-status.error {
+            display: block;
+            background-color: rgba(231, 76, 60, 0.2);
+            color: #e74c3c;
+            border: 1px solid #e74c3c;
+        }
+
+        #form-status.loading {
+            display: block;
+            background-color: rgba(212, 175, 55, 0.2);
+            color: var(--gold);
+            border: 1px solid var(--gold);
+        }
+
+        .submit-container button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .submit-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        /* Updated Footer to match image */
+        .footer-new {
+            background-color: var(--bg-dark);
+            padding: 100px 0 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-grid-new {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+        .footer-left-new {
+            max-width: 500px;
+        }
+
+        .footer-brand-new {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .logo-k {
+            background-color: var(--gold);
+            color: #000;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+            font-weight: 800;
+            font-size: 1.8rem;
+        }
+
+        .brand-text-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-white);
+        }
+
+        .footer-left-new p {
+            font-size: 1rem;
+            margin-bottom: 25px;
+            color: var(--text-white);
+        }
+
+        .footer-newsletter-new {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .footer-newsletter-new input {
+            background-color: var(--bg-darker);
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            border-radius: 8px;
+            color: var(--text-white);
+            flex-grow: 1;
+            min-width: 250px;
+        }
+
+        .footer-newsletter-new .btn {
+            padding: 15px 30px;
+        }
+
+        .footer-policy-text {
+            font-size: 0.85rem;
+            opacity: 0.6;
+            max-width: 400px;
+            line-height: 1.4;
+        }
+
+        .footer-right-new {
+            display: flex;
+            gap: 80px;
+        }
+
+        .footer-col-new h4 {
+            color: var(--text-white);
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .footer-col-new ul {
+            list-style: none;
+        }
+
+        .footer-col-new ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col-new ul li a {
+            opacity: 0.7;
+            font-size: 0.95rem;
+        }
+
+        .footer-col-new ul li a:hover {
+            opacity: 1;
+            color: var(--gold);
+        }
+
+        .social-icons-new {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon-circle {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-white);
+            font-size: 1.2rem;
+        }
+
+        .social-icon-circle:hover {
+            background-color: var(--gold);
+            color: var(--bg-dark);
+            border-color: var(--gold);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .form-container {
+                padding: 30px;
+            }
+
+            .footer-right-new {
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .nav-links,
+            .nav-action {
+                display: none;
+            }
+
+            .contact-form .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+
+            .footer-grid-new {
+                flex-direction: column;
+            }
+
+            .footer-right-new {
+                flex-direction: column;
+                gap: 30px;
+            }
+
+            .footer-newsletter-new {
+                flex-direction: column;
+            }
+
+            .footer-newsletter-new input {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body class="contact-page-body">
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="logo_kristo_prime_bank-removebg-preview.png" alt="Kristo Prime Bank Logo" class="logo-img" style="height: 50px; width: auto;">
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="nos_produits.html">Nos produits</a>
+                <a href="Apropos.html">À propos</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="nav-action">
+                <a href="#" class="btn btn-primary">Ouvrir un compte</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="contact-hero">
+            <div class="container">
+                <h1>Besoin d'une assistance?</h1>
+                <p>Nous sommes à votre écoute 24h/24 et 7j/7, prêts à vous servir. N'hésitez pas de contacter notre
+                    service client directement par whatsapp et nous vous mettons en relation avec un conseiller en moins
+                    de 5 minutes.</p>
+                <a href="#" class="btn btn-primary">Nous contacter</a>
+            </div>
+        </section>
+
+        <!-- Form Section -->
+        <section class="section-form">
+            <div class="container">
+                <div class="form-title-section">
+                    <h2>Pour vos questions sur les micro-crédits et partenariats</h2>
+                    <p>Remplissez ce formulaire puis envoyez</p>
+                </div>
+
+                <div class="form-container">
+                    <div id="form-status"></div>
+                    <form class="contact-form" id="kristo-contact-form">
+                        <!-- Votre clé d'accès Web3Forms -->
+                        <input type="hidden" name="access_key" value="VOTRE_CLE_ICI">
+                        <input type="hidden" name="subject" value="Nouveau message de Kristo Prime Bank">
+                        <input type="hidden" name="from_name" value="Kristo Prime Bank Site">
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="first-name">Prénom *</label>
+                                <input type="text" id="first-name" name="first_name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="last-name">Nom de famille *</label>
+                                <input type="text" id="last-name" name="last_name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Numéro de téléphone *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Nom de l'entreprise</label>
+                                <input type="text" id="company" name="company">
+                            </div>
+                            <div class="form-group">
+                                <label for="pro-email">Email professionnel</label>
+                                <input type="email" id="pro-email" name="pro_email">
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" required></textarea>
+                            </div>
+                        </div>
+                        <div class="submit-container">
+                            <button type="submit" class="btn btn-primary" id="submit-btn">Envoyez</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-new">
+        <div class="container">
+            <div class="footer-grid-new">
+                <div class="footer-left-new">
+                    <div class="footer-brand-new">
+                        <div class="logo-k">K</div>
+                        <div class="brand-text-name">KRISTO PRIME BANK</div>
+                    </div>
+                    <p>Restez informé des nouveautés et mises à jour de Kristo Prime Bank.</p>
+                    <form class="footer-newsletter-new">
+                        <input type="email" placeholder="Email">
+                        <button type="submit" class="btn btn-primary">S'abonner</button>
+                    </form>
+                    <p class="footer-policy-text">
+                        En vous abonnant, vous acceptez notre politique de confidentialité et consentez à recevoir nos
+                        communications.
+                    </p>
+                </div>
+
+                <div class="footer-right-new">
+                    <div class="footer-col-new">
+                        <h4>Produits</h4>
+                        <ul>
+                            <li><a href="#">Comptes bancaires</a></li>
+                            <li><a href="#">Services de crédit</a></li>
+                            <li><a href="#">Cartes et change</a></li>
+                            <li><a href="#">Transferts instantanés</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col-new">
+                        <h4>Nous suivre</h4>
+                        <div class="social-icons-new">
+                            <a href="#" class="social-icon-circle">f</a>
+                            <a href="#" class="social-icon-circle">in</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const form = document.getElementById('kristo-contact-form');
+        const statusDiv = document.getElementById('form-status');
+        const submitBtn = document.getElementById('submit-btn');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Affichage de l'état de chargement
+            statusDiv.textContent = "Envoi en cours...";
+            statusDiv.className = "loading";
+            submitBtn.disabled = true;
+
+            const formData = new FormData(form);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
+            // Utilisation d'une URL relative pour fonctionner sur n'importe quel domaine (Koyeb ou local)
+            fetch('/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                if (response.ok) {
+                    statusDiv.textContent = "Merci ! Votre message a été envoyé avec succès.";
+                    statusDiv.className = "success";
+                    form.reset();
+                } else {
+                    const errorData = await response.json();
+                    statusDiv.textContent = "Erreur : " + (errorData.message || "Impossible d'envoyer le message.");
+                    statusDiv.className = "error";
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                statusDiv.textContent = "Désolé, une erreur est survenue lors de l'envoi.";
+                statusDiv.className = "error";
+            })
+            .then(function() {
+                submitBtn.disabled = false;
+                setTimeout(() => {
+                    // Optionnel : cacher le message après 5 secondes
+                    // statusDiv.style.display = 'none';
+                }, 5000);
+            });
+        });
+    </script>
+</body>
+
+</html>

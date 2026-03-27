@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kristo Prime Bank</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a1128;
+            /* Deep navy blue background */
+            --bg-darker: #050a17;
+            /* Darker navy for footer/navbar */
+            --gold: #c5a059;
+            /* Gold accent color */
+            --gold-hover: #e6cc99;
+            --text-light: #e0e0e0;
+            --text-white: #ffffff;
+            --bg-card: #e8dcc4;
+            /* Light beige for testimonial/why cards */
+            --bg-card-dark: #121e3b;
+            /* Lighter blue for dark cards */
+            --font-main: 'Montserrat', sans-serif;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --bg-white: #ffffff;
+            --text-dark: #0a1128;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-4 {
+            margin-top: 2rem;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            color: var(--text-white);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--gold);
+            color: var(--bg-darker);
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--gold-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            font-weight: 600;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--gold);
+            color: var(--bg-darker);
+        }
+
+        /* Navbar */
+        .navbar {
+            padding: 20px 0;
+            background-color: var(--bg-darker);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-icon {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .logo-icon-gold {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-white);
+        }
+
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 400;
+            color: var(--text-light);
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0;
+            background-size: cover;
+            background-position: center;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            border-radius: 0 0 40px 40px;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            color: var(--text-white);
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        /* Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: transparent;
+            padding: 0;
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            object-fit: cover;
+            aspect-ratio: 16/9;
+        }
+
+        .feature-card h3 {
+            color: var(--text-white);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            text-align: center;
+        }
+
+        .feature-card p {
+            text-align: center;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: var(--bg-card);
+            color: var(--bg-dark);
+            padding: 30px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .quote {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin: 0;
+            font-weight: 700;
+        }
+
+        .author-info span {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Why Choose Us */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+
+        .why-card {
+            background-color: var(--bg-card);
+            color: var(--bg-dark);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .why-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .why-content {
+            padding: 25px;
+        }
+
+        .tag {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: inline-block;
+            color: var(--gold-hover);
+        }
+
+        .why-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .why-card-large {
+            grid-column: span 2;
+            background-color: var(--bg-card);
+        }
+
+        .why-card-large-content {
+            display: flex;
+            height: 100%;
+        }
+
+        .why-card-large-content img {
+            width: 40%;
+            height: auto;
+            border-radius: 16px 0 0 16px;
+        }
+
+        .why-content-right {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Fees */
+        .fee-card-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        .fee-card {
+            border: 2px solid var(--border-color);
+            padding: 50px;
+            border-radius: 16px;
+            max-width: 500px;
+            width: 100%;
+            background-color: transparent;
+        }
+
+        .fee-card h3 {
+            color: var(--text-white);
+            font-size: 1.5rem;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin: 20px 0;
+        }
+
+        .fee-list {
+            list-style: none;
+            text-align: left;
+            display: inline-block;
+        }
+
+        .fee-list li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .fee-list li::before {
+            content: '✓';
+            color: var(--text-white);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Social proof */
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 200px;
+            gap: 20px;
+        }
+
+        .proof-box {
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .stat-box {
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+        }
+
+        .stat-box-large {
+            grid-column: span 1;
+            grid-row: span 2;
+        }
+
+        .wide-img {
+            grid-column: span 2;
+            grid-row: span 1;
+        }
+
+        .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .stat-box h3 {
+            font-size: 2rem;
+            color: var(--text-white);
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .stat-box p {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        /* App Download */
+        .download-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: transparent;
+            /* or matching dark shade */
+            border-radius: 20px;
+        }
+
+        .download-content {
+            max-width: 50%;
+        }
+
+        .download-content h2 {
+            font-size: 2.5rem;
+            color: var(--text-white);
+            margin-bottom: 20px;
+        }
+
+        .download-img {
+            width: 45%;
+        }
+
+        .download-img img {
+            border-radius: 16px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--bg-darker);
+            padding: 80px 0 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .footer-brand {
+            max-width: 350px;
+        }
+
+        .footer-brand p {
+            margin: 20px 0;
+        }
+
+        .subscribe-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .subscribe-form input {
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background-color: transparent;
+            color: var(--text-white);
+            flex-grow: 1;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 60px;
+        }
+
+        .link-group h4 {
+            color: var(--text-white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .link-group ul {
+            list-style: none;
+        }
+
+        .link-group ul li {
+            margin-bottom: 10px;
+        }
+
+        .link-group ul li a {
+            color: var(--text-light);
+            opacity: 0.8;
+        }
+
+        .link-group ul li a:hover {
+            color: var(--gold);
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            text-align: left;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            opacity: 0.6;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+
+            .nav-links,
+            .nav-action {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-card-large {
+                grid-column: span 1;
+            }
+
+            .why-card-large-content {
+                flex-direction: column;
+            }
+
+            .why-card-large-content img {
+                width: 100%;
+                border-radius: 16px 16px 0 0;
+            }
+
+            .proof-grid {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .proof-box {
+                min-height: 200px;
+            }
+
+            .download-wrapper {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .download-content {
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+
+            .download-img {
+                width: 100%;
+            }
+
+            .footer-top {
+                flex-direction: column;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="logo_kristo_prime_bank-removebg-preview.png" alt="Kristo Prime Bank Logo" class="logo-img">
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="nos_produits.html">Nos produits</a>
+                <a href="Apropos.html">À propos</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="nav-action">
+                <a href="#" class="btn btn-primary">Télécharger l'app</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero"
+            style="background-image: linear-gradient(rgba(13, 27, 42, 0.7), rgba(13, 27, 42, 0.7)), url('image1.png');">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Vivez l'expérience bancaire autrement.</h1>
+                    <p>Nous réinventons la banque classique en alliant tradition et innovation. Plongez dans une
+                        nouvelle ère financière avec Kristo Prime Bank.</p>
+                    <a href="#" class="btn btn-primary">Télécharger l'app</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Ce que Kristo Prime Bank vous offre</h2>
+                    <p>Découvrez notre gamme de services bancaires novateurs conçus pour simplifier votre gestion
+                        financière au quotidien.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <img src="image2.png" alt="Transferts Instantanés">
+                        <h3>Transferts Instantanés</h3>
+                        <p>Envoyez et recevez de l'argent instantanément, à tout moment.</p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="image3.png" alt="Micro-crédit Immédiat">
+                        <h3>Micro-crédit Immédiat</h3>
+                        <p>Obtenez des prêts sans tracas selon votre profil d'épargne.</p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="image4.png" alt="Taux de change live">
+                        <h3>Taux de change live</h3>
+                        <p>Bénéficiez des meilleurs taux du marché de manière transparente.</p>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="nos_produits.html" class="btn btn-outline">Voir plus &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Ils nous font confiance</h2>
+                    <p>Découvrez ce qu'ils disent de nous</p>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <p class="quote">"Je n'ai jamais vu un service client aussi réactif, tout se règle en quelques
+                            clics via l'application !"</p>
+                        <div class="author">
+                            <img src="image5.png" alt="Cédric Mombesa" class="avatar">
+                            <div class="author-info">
+                                <h4>Cédric Mombesa</h4>
+                                <span>Développeur, Kinshasa</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="quote">"Une interface utilisateur brillante, un design épuré, mes opérations n'ont
+                            jamais été aussi fluides."</p>
+                        <div class="author">
+                            <img src="image6.png" alt="Lucie Basonga" class="avatar">
+                            <div class="author-info">
+                                <h4>Lucie Basonga</h4>
+                                <span>Analyste financière, Goma</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="quote">"Demander un micro-crédit a été simple et la réponse fut instantanée. Je
+                            recommande !"</p>
+                        <div class="author">
+                            <img src="image7.png" alt="Fabrice Ntambwe" class="avatar">
+                            <div class="author-info">
+                                <h4>Fabrice Ntambwe</h4>
+                                <span>Entrepreneur, Lubumbashi</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="why-choose-us section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Pourquoi choisir Kristo Prime Bank</h2>
+                    <p>Les caractéristiques qui font de nous le meilleur compte pour vous et votre entreprise.</p>
+                </div>
+                <div class="why-grid">
+                    <div class="why-card">
+                        <img src="image8.png" alt="Zéro frais cachés">
+                        <div class="why-content">
+                            <span class="tag">Transparence</span>
+                            <h3>Zéro frais cachés</h3>
+                            <p>Ouvrez votre compte sans aucun frais caché ni maintien, 100% transparent.</p>
+                        </div>
+                    </div>
+                    <div class="why-card">
+                        <img src="image9.png" alt="Tout en quelques secondes">
+                        <div class="why-content">
+                            <span class="tag">Vitesse</span>
+                            <h3>Tout en quelques secondes</h3>
+                            <p>Payez avec Mobile money, carte bancaire, tout est fait en un clin d'oeil.</p>
+                        </div>
+                    </div>
+                    <div class="why-card why-card-large">
+                        <div class="why-card-large-content">
+                            <img src="image10.png" alt="Assistance WhatsApp">
+                            <div class="why-content-right">
+                                <span class="tag">Support</span>
+                                <h3>Assistance disponible sur WhatsApp</h3>
+                                <p>Un souci? Notre équipe est là pour vous 24/7 sur WhatsApp.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fees Section -->
+        <section class="fees section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Frais simples</h2>
+                    <p>Un compte avec zéro frais d'ouverture, avec tenue de compte nulle et inactivité gratuite.</p>
+                </div>
+                <div class="fee-card-wrapper">
+                    <div class="fee-card text-center">
+                        <h3>Compte courant</h3>
+                        <div class="price">0 FC</div>
+                        <ul class="fee-list">
+                            <li>Ouverture de compte gratuite</li>
+                            <li>Carte visa (à venir)</li>
+                            <li>Accès à l'application Mobile</li>
+                            <li>Zéro pénalité pour inactivité</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof Section -->
+        <section class="social-proof section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Rejoignez des milliers<br>de congolais qui ont transformé<br>leur vie financière</h2>
+                </div>
+                <div class="proof-grid">
+                    <div class="proof-box stat-box stat-box-large">
+                        <div>
+                            <h3>50 000 +</h3>
+                            <p>utilisateurs actifs</p>
+                        </div>
+                    </div>
+                    <div class="proof-box img-box wide-img">
+                        <img src="image11.png" alt="Business team">
+                    </div>
+                    <div class="proof-box stat-box dark-outline">
+                        <div>
+                            <h3>2 milliards FC</h3>
+                            <p>Transférés chaque mois</p>
+                        </div>
+                    </div>
+                    <div class="proof-box stat-box dark-outline">
+                        <div>
+                            <h3>98 %</h3>
+                            <p>satisfaction client</p>
+                        </div>
+                    </div>
+                    <div class="proof-box img-box wide-img">
+                        <img src="image12.png" alt="Happy friends">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Assistance Section -->
+        <section class="assistance section-padding text-center">
+            <div class="container">
+                <h2>Besoin d'aide supplémentaire?</h2>
+                <p>Notre équipe est disponible sur WhatsApp pour répondre à toutes vos questions.</p>
+                <a href="#" class="btn btn-outline mt-4">Contactez-nous</a>
+            </div>
+        </section>
+
+        <!-- App Download Section -->
+        <section class="app-download section-padding">
+            <div class="container">
+                <div class="download-wrapper">
+                    <div class="download-content">
+                        <h2>Téléchargez Kristo Prime Bank maintenant</h2>
+                        <p>Rejoignez la révolution financière, téléchargez l'application et commencez dès aujourd'hui.
+                        </p>
+                        <a href="#" class="btn btn-primary mt-4">Télécharger l'app</a>
+                    </div>
+                    <div class="download-img">
+                        <img src="image13.png" alt="Happy people">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon-gold">K</span>
+                    </div>
+                    <p>Kristo Prime Bank, la nouvelle façon de voir la banque.</p>
+                    <form class="subscribe-form mt-4">
+                        <input type="email" placeholder="Entrez votre adresse email">
+                        <button type="submit" class="btn btn-primary">S'abonner</button>
+                    </form>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>SOCIÉTÉ</h4>
+                        <ul>
+                            <li><a href="#">À propos de nous</a></li>
+                            <li><a href="#">Conditions d'utilisation</a></li>
+                            <li><a href="#">Politique de confidentialité</a></li>
+                            <li><a href="#">Tarification & honoraires</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>PRODUITS</h4>
+                        <ul>
+                            <li><a href="#">Comptes courants</a></li>
+                            <li><a href="#">Transferts d'argent</a></li>
+                            <li><a href="#">Cartes de crédit</a></li>
+                            <li><a href="#">Micro-crédits</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Kristo Prime Bank. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

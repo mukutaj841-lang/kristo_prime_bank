@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À Propos - Kristo Prime Bank</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a1128;
+            --bg-darker: #050a17;
+            --gold: #d4af37;
+            --gold-hover: #b5952f;
+            --text-light: #e0e0e0;
+            --text-white: #ffffff;
+            --bg-card: #e8dcc4;
+            --bg-card-dark: #121e3b;
+            --font-main: 'Montserrat', sans-serif;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --bg-white: #ffffff;
+            --text-dark: #0a1128;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-4 {
+            margin-top: 2rem;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            color: var(--text-white);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--gold);
+            color: var(--bg-darker);
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--gold-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            font-weight: 600;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--gold);
+            color: var(--bg-darker);
+        }
+
+        /* Navbar */
+        .navbar {
+            padding: 20px 0;
+            background-color: var(--bg-darker);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-icon {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .logo-icon-gold {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-white);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 400;
+            color: var(--text-light);
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--bg-darker);
+            padding: 80px 0 20px;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .footer-brand {
+            max-width: 350px;
+        }
+
+        .footer-brand p {
+            margin: 20px 0;
+        }
+
+        .subscribe-form {
+            display: flex;
+            gap: 10px;
+        }
+
+        .subscribe-form input {
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background-color: transparent;
+            color: var(--text-white);
+            flex-grow: 1;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 60px;
+        }
+
+        .link-group h4 {
+            color: var(--text-white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .link-group ul {
+            list-style: none;
+        }
+
+        .link-group ul li {
+            margin-bottom: 10px;
+        }
+
+        .link-group ul li a {
+            color: var(--text-light);
+            opacity: 0.8;
+        }
+
+        .link-group ul li a:hover {
+            color: var(--gold);
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            text-align: left;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            opacity: 0.6;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* ===== Apropos Page Specific Styles ===== */
+        .apropos-hero {
+            height: 60vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            margin: 20px;
+            border-radius: 30px;
+            overflow: hidden;
+        }
+
+        .apropos-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .apropos-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .apropos-hero h1 {
+            font-size: 2.8rem;
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .apropos-hero p {
+            font-size: 1.1rem;
+            color: #fff;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .mission-intro {
+            padding: 100px 0;
+            background-color: var(--bg-dark);
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .mission-text p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: var(--text-light);
+            max-width: 500px;
+        }
+
+        .mission-image img {
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        .pillars-section {
+            padding: 80px 0;
+            background-color: var(--bg-dark);
+            text-align: center;
+        }
+
+        .pillars-section h2 {
+            font-size: 2.2rem;
+            color: #fff;
+            margin-bottom: 60px;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .pillar-item {
+            text-align: center;
+        }
+
+        .pillar-circle {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .pillar-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pillar-item h4 {
+            font-size: 1rem;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .vision-section {
+            padding: 80px 0;
+            background-color: var(--bg-dark);
+        }
+
+        .vision-container {
+            text-align: center;
+        }
+
+        .vision-container h2 {
+            font-size: 2.22rem;
+            color: #fff;
+            margin-bottom: 50px;
+        }
+
+        .vision-grid {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .vision-text {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .vision-text p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            line-height: 1.5;
+            max-width: 350px;
+        }
+
+        .vision-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .vision-image img {
+            max-width: 350px;
+            width: 100%;
+        }
+
+        .partners-section {
+            padding: 100px 0;
+            background-color: var(--bg-dark);
+            text-align: center;
+        }
+
+        .partners-section h2 {
+            font-size: 1.8rem;
+            color: #fff;
+            margin-bottom: 60px;
+            font-weight: 600;
+        }
+
+        .partners-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .partners-row {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .partner-logo {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .partner-logo img {
+            max-height: 100%;
+            width: auto;
+            filter: grayscale(0);
+            transition: transform 0.3s;
+        }
+
+        .partner-logo img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Footer specific modifications from mockup */
+        .footer-logo-gold {
+            background-color: var(--gold);
+            color: var(--bg-darker);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .footer-bottom-info {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-top: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+
+            .nav-links,
+            .nav-action {
+                display: none;
+            }
+
+            .mission-grid,
+            .vision-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .mission-text p,
+            .vision-text p {
+                max-width: 100%;
+            }
+
+            .pillars-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .apropos-hero h1 {
+                font-size: 2rem;
+            }
+
+            .footer-top {
+                flex-direction: column;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="logo_kristo_prime_bank-removebg-preview.png" alt="Kristo Prime Bank Logo" class="logo-img" style="height: 50px; width: auto;">
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="nos_produits.html">Nos produits</a>
+                <a href="Apropos.html">À propos</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="nav-action">
+                <a href="#" class="btn btn-primary">Ouvrir un compte</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="apropos-hero" style="background-image: url('image22.jfif'); height: 500px;">
+            <div class="container">
+                <h1>Notre mission : L'inclusion financière au cœur du Congo</h1>
+                <p>Kristo Prime Bank, la banque digitale qui donne la puissance financière à tous les Congolais.</p>
+            </div>
+        </section>
+
+        <!-- Mission Intro Section -->
+        <section class="mission-intro">
+            <div class="container">
+                <div class="mission-grid">
+                    <div class="mission-text">
+                        <p>Fondée pour transformer l'accès aux services financiers en RDC, Kristo Prime Bank combine la
+                            technologie de pointe à une compréhension profonde des réalités locales.</p>
+                    </div>
+                    <div class="mission-image">
+                        <img src="image23.png" alt="Mission Vision Leader">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pillars Section -->
+        <section class="pillars-section">
+            <div class="container">
+                <h2>Les piliers de notre mission</h2>
+                <div class="pillars-grid">
+                    <div class="pillar-item">
+                        <div class="pillar-circle">
+                            <img src="image24.jfif" alt="Inclusion financière">
+                        </div>
+                        <h4>Inclusion financière</h4>
+                    </div>
+                    <div class="pillar-item">
+                        <div class="pillar-circle">
+                            <img src="image25.jfif" alt="Accessibilité mobile">
+                        </div>
+                        <h4>Accessibilité mobile</h4>
+                    </div>
+                    <div class="pillar-item">
+                        <div class="pillar-circle">
+                            <img src="image26.jfif" alt="Sécurité avancée">
+                        </div>
+                        <h4>Sécurité avancée</h4>
+                    </div>
+                    <div class="pillar-item">
+                        <div class="pillar-circle">
+                            <img src="image27.jfif" alt="Accompagnement personnalisé">
+                        </div>
+                        <h4>Accompagnement personnalisé</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision Section -->
+        <section class="vision-section">
+            <div class="container vision-container">
+                <h2>Notre vision</h2>
+                <div class="vision-grid">
+                    <div class="vision-text">
+                        <p>Devenir le pont de confiance incontournable entre le talent congolais et l'économie globale.
+                        </p>
+                    </div>
+                    <div class="vision-image">
+                        <img src="image28.png" alt="Vision Tomorrow">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners Section -->
+        <section class="partners-section">
+            <div class="container">
+                <h2>Nos partenaires</h2>
+                <div class="partners-grid">
+                    <div class="partners-row">
+                        <div class="partner-logo"><img src="image29.png" alt="Orange Money"></div>
+                        <div class="partner-logo"><img src="image30.png" alt="Airtel Money"></div>
+                        <div class="partner-logo"><img src="image31.png" alt="M-Pesa"></div>
+                        <div class="partner-logo"><img src="image32.png" alt="Afrimoney"></div>
+                        <div class="partner-logo"><img src="image33.png" alt="Partner"></div>
+                    </div>
+                    <div class="partners-row">
+                        <div class="partner-logo"><img src="image34.png" alt="Kadea"></div>
+                        <div class="partner-logo"><img src="image35.png" alt="Logo"></div>
+                        <div class="partner-logo"><img src="image36.png" alt="Partner"></div>
+                        <div class="partner-logo"><img src="image37.png" alt="Partner"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo-gold">K</div>
+                    <p>Restez informé des nouveautés et mises à jour de Kristo Prime Bank.</p>
+                    <form class="subscribe-form mt-4">
+                        <input type="email" placeholder="Email">
+                        <button type="submit" class="btn btn-primary"
+                            style="background-color: #d8b36e; color: #000;">S'abonner</button>
+                    </form>
+                    <p class="footer-bottom-info">En vous abonnant, vous acceptez notre politique de confidentialité et
+                        consentez à recevoir nos communications.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>Produits</h4>
+                        <ul>
+                            <li><a href="#">Comptes bancaires</a></li>
+                            <li><a href="#">Services de crédit</a></li>
+                            <li><a href="#">Cartes et change</a></li>
+                            <li><a href="#">Transferts instantanés</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>Nous suivre</h4>
+                        <div style="display: flex; gap: 15px;">
+                            <a href="#"><img src="logo_kristo_prime_bank-removebg-preview.png"
+                                    style="width: 30px; height: 30px; filter: invert(1);"></a>
+                            <!-- Placeholder for social icons as seen in mockup -->
+                            <a href="#"><img src="logo_kristo_prime_bank-removebg-preview.png"
+                                    style="width: 30px; height: 30px; filter: invert(1);"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
