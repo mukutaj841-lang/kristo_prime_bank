@@ -113,14 +113,14 @@
         }
 
         .btn-outline {
-            background-color: transparent;
-            color: var(--gold);
+            background-color: var(--gold);
+            color: var(--bg-darker);
             border: 1px solid var(--gold);
             font-weight: 600;
         }
 
         .btn-outline:hover {
-            background-color: var(--gold);
+            background-color: var(--gold-hover);
             color: var(--bg-darker);
         }
 
@@ -147,7 +147,7 @@
         }
 
         .logo-img {
-            height: 50px;
+            height: 80px;
             width: auto;
         }
 
@@ -527,17 +527,9 @@
             margin-bottom: 40px;
         }
 
-        .logo-k {
-            background-color: var(--gold);
-            color: #000;
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 6px;
-            font-weight: 800;
-            font-size: 1.8rem;
+        .footer-logo-img {
+            height: 70px;
+            width: auto;
         }
 
         .brand-text-name {
@@ -736,7 +728,7 @@
         !function (f, b, e, v, n, t, s) {
             if (f.fbq) return; n = f.fbq = function () {
                 n.callMethod ?
-                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
             if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
             n.queue = []; t = b.createElement(e); t.async = !0;
@@ -757,7 +749,7 @@
             <div class="logo">
                 <img src="logo_kristo_prime_bank-removebg-preview.png" alt="Kristo Prime Bank Logo" class="logo-img">
             </div>
-            
+
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -783,8 +775,10 @@
             <div class="container">
                 <div class="hero-content">
                     <h1>Vivez l'expérience bancaire autrement.</h1>
-                    <p>Nous réinventons la banque classique en alliant tradition et innovation. Plongez dans une
-                        nouvelle ère financière avec Kristo Prime Bank.</p>
+                    <p>Accédez a des services bancaire modernes sans complication <br>
+                        Transferts instantanés, credits rapides et cartes virtuelles <br>
+                        pour tous les congolais.
+                    </p>
                     <a href="#" class="btn btn-primary">Télécharger l'app</a>
                 </div>
             </div>
@@ -795,28 +789,31 @@
             <div class="container">
                 <div class="section-header text-center">
                     <h2>Ce que Kristo Prime Bank vous offre</h2>
-                    <p>Découvrez notre gamme de services bancaires novateurs conçus pour simplifier votre gestion
-                        financière au quotidien.</p>
+                    <p>Tois fonctionnalités essentielles conçus pour simplifier votre vie financière. Pas de<br>
+                        complication, juste ce dont vous avez besoin.</p>
                 </div>
                 <div class="features-grid">
                     <div class="feature-card">
                         <img src="image2.png" alt="Transferts Instantanés">
                         <h3>Transferts Instantanés</h3>
-                        <p>Envoyez et recevez de l'argent instantanément, à tout moment.</p>
+                        <p>Envoyez de l'argent en quelques <br>
+                            secondes vers n'importe quel compte</p>
                     </div>
                     <div class="feature-card">
                         <img src="image3.png" alt="Micro-crédit Immédiat">
                         <h3>Micro-crédit Immédiat</h3>
-                        <p>Obtenez des prêts sans tracas selon votre profil d'épargne.</p>
+                        <p>Obtenez un crédit basé sur votre profil,<br>
+                            sans attendre des jours.</p>
                     </div>
                     <div class="feature-card">
                         <img src="image4.png" alt="Taux de change live">
                         <h3>Taux de change live</h3>
-                        <p>Bénéficiez des meilleurs taux du marché de manière transparente.</p>
+                        <p>Convertissez USD et CDF aux meilleurs <br>
+                            taux du marché, en temps réel.</p>
                     </div>
                 </div>
                 <div class="text-center mt-4">
-                    <a href="nos_produits.html" class="btn btn-outline">Voir plus &rarr;</a>
+                    <a href="nos_produits.html" class="btn btn-outline">Découvrir &rarr;</a>
                 </div>
             </div>
         </section>
@@ -826,39 +823,43 @@
             <div class="container">
                 <div class="section-header text-center">
                     <h2>Ils nous font confiance</h2>
-                    <p>Découvrez ce qu'ils disent de nous</p>
+                    <p>Écoutez ceux qui ont change leur vie financière</p>
                 </div>
                 <div class="testimonials-grid">
                     <div class="testimonial-card">
-                        <p class="quote">"Je n'ai jamais vu un service client aussi réactif, tout se règle en quelques
-                            clics via l'application !"</p>
+                        <p class="quote">"kristo Prime Bank m'a permis de <br>
+                            gérer mon commerce sans stress. <br>
+                            Les Transferts sont instantanés."</p>
                         <div class="author">
                             <img src="image5.png" alt="Cédric Mombesa" class="avatar">
                             <div class="author-info">
-                                <h4>Cédric Mombesa</h4>
-                                <span>Développeur, Kinshasa</span>
+                                <h4>Gloire Mwamba</h4>
+                                <span>Commerçant, Kinshasa</span>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card">
-                        <p class="quote">"Une interface utilisateur brillante, un design épuré, mes opérations n'ont
-                            jamais été aussi fluides."</p>
+                        <p class="quote">"Á vingt-trois ans, j'ai enfin accés <br>
+                            a des services bancaires <br>
+                            modrnes. C'est simple, rapide et <br>
+                            fait pour ma générations."</p>
                         <div class="author">
                             <img src="image6.png" alt="Lucie Basonga" class="avatar">
                             <div class="author-info">
-                                <h4>Lucie Basonga</h4>
-                                <span>Analyste financière, Goma</span>
+                                <h4>Junior Kasongo</h4>
+                                <span>Web entrepreneur, Goma</span>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card">
-                        <p class="quote">"Demander un micro-crédit a été simple et la réponse fut instantanée. Je
-                            recommande !"</p>
+                        <p class="quote">"Le micro-credit m'a aidé a lancer <br>
+                            mon projet. L'IA a compris ma situation mieux que n'importe <br>
+                            quelle banque traditionnelle "</p>
                         <div class="author">
                             <img src="image7.png" alt="Fabrice Ntambwe" class="avatar">
                             <div class="author-info">
-                                <h4>Fabrice Ntambwe</h4>
-                                <span>Entrepreneur, Lubumbashi</span>
+                                <h4>Falonne Ndombele</h4>
+                                <span>Entrepreneur, Lushi</span>
                             </div>
                         </div>
                     </div>
@@ -871,7 +872,7 @@
             <div class="container">
                 <div class="section-header text-center">
                     <h2>Pourquoi choisir Kristo Prime Bank</h2>
-                    <p>Les caractéristiques qui font de nous le meilleur compte pour vous et votre entreprise.</p>
+                    <p>Nous avons éliminé ce qui ralentit les autres banques pour vous offrir l'essentiel.</p>
                 </div>
                 <div class="why-grid">
                     <div class="why-card">
@@ -879,7 +880,7 @@
                         <div class="why-content">
                             <span class="tag">Transparence</span>
                             <h3>Zéro frais cachés</h3>
-                            <p>Ouvrez votre compte sans aucun frais caché ni maintien, 100% transparent.</p>
+                            <p>Chaque operation est claire et sans surprise désargéable.</p>
                         </div>
                     </div>
                     <div class="why-card">
@@ -887,7 +888,7 @@
                         <div class="why-content">
                             <span class="tag">Vitesse</span>
                             <h3>Tout en quelques secondes</h3>
-                            <p>Payez avec Mobile money, carte bancaire, tout est fait en un clin d'oeil.</p>
+                            <p>Transferts, crédits, conversions. Aucune file d'attente, aucun délai</p>
                         </div>
                     </div>
                     <div class="why-card why-card-large">
@@ -896,7 +897,7 @@
                             <div class="why-content-right">
                                 <span class="tag">Support</span>
                                 <h3>Assistance disponible sur WhatsApp</h3>
-                                <p>Un souci? Notre équipe est là pour vous 24/7 sur WhatsApp.</p>
+                                <p>Nous sommes la quand vous avez besoin, directement aur votre téléphone</p>
                             </div>
                         </div>
                     </div>
@@ -909,7 +910,7 @@
             <div class="container">
                 <div class="section-header text-center">
                     <h2>Frais simples</h2>
-                    <p>Un compte avec zéro frais d'ouverture, avec tenue de compte nulle et inactivité gratuite.</p>
+                    <p>Pas de surprise. Voici exactement ce que vous paierez pour votre complet courant</p>
                 </div>
                 <div class="fee-card-wrapper">
                     <div class="fee-card text-center">
@@ -917,9 +918,9 @@
                         <div class="price">0 FC</div>
                         <ul class="fee-list">
                             <li>Ouverture de compte gratuite</li>
-                            <li>Carte visa (à venir)</li>
+                            <li>Carte virtuelle incluse</li>
                             <li>Accès à l'application Mobile</li>
-                            <li>Zéro pénalité pour inactivité</li>
+                            <li>Zéro client prioritaire</li>
                         </ul>
                     </div>
                 </div>
@@ -965,8 +966,8 @@
         <section class="assistance section-padding text-center">
             <div class="container">
                 <h2>Besoin d'aide supplémentaire?</h2>
-                <p>Notre équipe est disponible sur WhatsApp pour répondre à toutes vos questions.</p>
-                <a href="#" class="btn btn-outline mt-4">Contactez-nous</a>
+                <p>Notre équipe est disponible sur WhatsApp pour répondre à vos questions.</p>
+                <a href="#" class="btn btn-outline mt-4">Nous contacter</a>
             </div>
         </section>
 
@@ -976,7 +977,7 @@
                 <div class="download-wrapper">
                     <div class="download-content">
                         <h2>Téléchargez Kristo Prime Bank maintenant</h2>
-                        <p>Rejoignez la révolution financière, téléchargez l'application et commencez dès aujourd'hui.
+                        <p>Rejoignez la révolution bancaire congolaise. Votre compte vous attend.
                         </p>
                         <a href="#" class="btn btn-primary mt-4">Télécharger l'app</a>
                     </div>
@@ -994,8 +995,7 @@
             <div class="footer-grid-new">
                 <div class="footer-left-new">
                     <div class="footer-brand-new">
-                        <div class="logo-k">K</div>
-                        <div class="brand-text-name">KRISTO PRIME BANK</div>
+                        <img src="logo_kristo_prime_bank-removebg-preview.png" alt="Kristo Prime Bank Logo" class="footer-logo-img">
                     </div>
                     <p>Restez informé des nouveautés et mises à jour de Kristo Prime Bank.</p>
                     <form class="footer-newsletter-new">
@@ -1037,7 +1037,7 @@
 
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            
+
             // Animation du hamburger vers X
             const spans = hamburger.querySelectorAll('span');
             spans[0].style.transform = navLinks.classList.contains('active') ? 'rotate(45deg) translate(6px, 6px)' : 'none';

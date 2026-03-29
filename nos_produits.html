@@ -11,8 +11,8 @@
         :root {
             --bg-dark: #0a1128;
             --bg-darker: #050a17;
-            --gold: #d4af37;
-            --gold-hover: #b5952f;
+            --gold: #c5a059;
+            --gold-hover: #e6cc99;
             --text-light: #e0e0e0;
             --text-white: #ffffff;
             --bg-card: #e8dcc4;
@@ -108,14 +108,14 @@
         }
 
         .btn-outline {
-            background-color: transparent;
-            color: var(--gold);
+            background-color: var(--gold);
+            color: var(--bg-darker);
             border: 1px solid var(--gold);
             font-weight: 600;
         }
 
         .btn-outline:hover {
-            background-color: var(--gold);
+            background-color: var(--gold-hover);
             color: var(--bg-darker);
         }
 
@@ -142,7 +142,7 @@
         }
 
         .logo-img {
-            height: 50px;
+            height: 80px;
             width: auto;
         }
 
@@ -267,17 +267,9 @@
             margin-bottom: 40px;
         }
 
-        .logo-k {
-            background-color: var(--gold);
-            color: #000;
-            width: 45px;
-            height: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 6px;
-            font-weight: 800;
-            font-size: 1.8rem;
+        .footer-logo-img {
+            height: 70px;
+            width: auto;
         }
 
         .brand-text-name {
@@ -644,7 +636,7 @@
         !function (f, b, e, v, n, t, s) {
             if (f.fbq) return; n = f.fbq = function () {
                 n.callMethod ?
-                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
             if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
             n.queue = []; t = b.createElement(e); t.async = !0;
@@ -663,10 +655,9 @@
     <header class="navbar">
         <div class="container">
             <div class="logo">
-                <img src="logo_kristo_prime_bank-removebg-preview.png" alt="Kristo Prime Bank Logo" class="logo-img"
-                    style="height: 50px; width: auto;">
+                <img src="logo_kristo_prime_bank-removebg-preview.png" alt="Kristo Prime Bank Logo" class="logo-img">
             </div>
-            
+
             <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
@@ -680,7 +671,7 @@
                 <a href="contact.html">Contact</a>
             </nav>
             <div class="nav-action">
-                <a href="#" class="btn btn-primary">Ouvrir un compte</a>
+                <a href="#" class="btn btn-primary">Télécharger l'app</a>
             </div>
         </div>
     </header>
@@ -817,8 +808,7 @@
             <div class="footer-grid-new">
                 <div class="footer-left-new">
                     <div class="footer-brand-new">
-                        <div class="logo-k">K</div>
-                        <div class="brand-text-name">KRISTO PRIME BANK</div>
+                        <img src="logo_kristo_prime_bank-removebg-preview.png" alt="Kristo Prime Bank Logo" class="footer-logo-img">
                     </div>
                     <p>Restez informé des nouveautés et mises à jour de Kristo Prime Bank.</p>
                     <form class="footer-newsletter-new">
@@ -860,7 +850,7 @@
 
         hamburger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            
+
             // Animation du hamburger vers X
             const spans = hamburger.querySelectorAll('span');
             spans[0].style.transform = navLinks.classList.contains('active') ? 'rotate(45deg) translate(6px, 6px)' : 'none';
